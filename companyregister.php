@@ -15,7 +15,7 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <h2 class="text-center mb-4">Company Registration Form</h2>
-          <form>
+          <form method="POST" action"">
             <div class="form-group">
               <label for="companyName">Company Name:</label>
               <input type="text" class="form-control" id="companyName" name="companyName" required>
@@ -61,13 +61,36 @@
             </div>
             <div class="form-group">
               <label for="CPICutoff">CPI Cutoff:</label>
-              <input type="number" class="form-control" id="CPICutoff" name="CPICutoff" required>
+              <input type="number" class="form-control" step="0.01" id="CPICutoff" name="CPICutoff" required>
             </div>
              <button type="submit" class="btn btn-primary btn-block">Submit</button>
           </form>
         </div>
       </div>
     </div>
+  <?php
+    // Get data from form
+	$companyName = $_POST["companyName"];
+	$salaryPackage = $_POST["salaryPackage"];
+	$recruitingSince = $_POST["recruitingSince"];
+	$interviewMode = $_POST["interviewMode"];
+	$interviewType = $_POST["interviewType"];
+	$minimumQualification = $_POST["minimumQualification"];
+	$class10Cutoff = $_POST["class10Cutoff"];
+	$class12Cutoff = $_POST["class12Cutoff"];
+	$CPICutoff = $_POST["CPICutoff"];
+	
+	$sql = "INSERT INTO Company (Name, Salary_Package, Recruiting_Since, Interview_Mode, Interview_Type, min_Qualification, class10_cutoff, class12_cutoff, cpi_cutoff) VALUES ('$companyName', '$salaryPackage', '$recruitingSince', '$interviewMode', '$interviewType', '$minimumQualification', '$class10Cutoff', '$class12Cutoff', '$CPICutoff')";
+	
+	
+	if ($conn->query($sql) === TRUE) {
+		echo "New record created successfully";
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+  ?>
   </body>
 </html>
             
