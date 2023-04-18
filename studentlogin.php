@@ -49,7 +49,7 @@
 echo mysqli_num_rows($result);
   if (mysqli_num_rows($result) == 1) {
     // User exists, redirect to dashboard or home page
-    header("Location: studenthome.php");
+    header("Location: studenthome.php?roll_number=".urlencode($roll_number));
     exit();
   } else {
     // User doesn't exist or invalid credentials, show error message
