@@ -12,7 +12,7 @@
       <h1 class="text-center">Placement Data</h1>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-          <a href="studentregister.php" class="btn btn-primary btn-block">Student Data Upload</a>
+          <a href="studentlogin.php" class="btn btn-primary btn-block">Student Data Upload</a>
           <a href="companyregister.php" class="btn btn-primary btn-block">Company Data Upload</a>
           <a href="alumnusregister.php" class="btn btn-primary btn-block">Alumnus Data Upload</a>
         </div>

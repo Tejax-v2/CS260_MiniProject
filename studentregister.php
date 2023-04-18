@@ -21,6 +21,10 @@
           <input type="text" class="form-control" id="roll_number" name="roll_number" required>
         </div>
         <div class="form-group">
+          <label for="pass">Password:</label>
+          <input type="text" class="form-control" id="pass" name="pass" required>
+        </div>
+        <div class="form-group">
           <label for="age">Age:</label>
           <input type="number" class="form-control" id="age" name="age" required>
         </div>
@@ -72,6 +76,7 @@
 	$class12 = $_POST['class12'];
 	$cpi = $_POST['last_cpi'];
 	$is_placed = $_POST['is_placed'];
+	$passwd = $_POST['pass'];
 	// Validate form data
 	if (empty($name) || empty($roll_number) || empty($age) || empty($batch_year) || empty($area_of_interest) || empty($specialization) || empty($is_placed) || empty($class10) || empty($class12) || empty($cpi)) {
 		die('Please fill all the fields');
@@ -82,9 +87,9 @@
 	if ($is_placed != 'yes' && $is_placed != 'no') {
 		die('Invalid value for is_placed field');
 	}
-	echo $name . $roll_number . $age . $batch_year;
+	echo $name . $roll_number . $age . $batch_year. $passwd;
 	// Insert form data into database
-	$sql = "INSERT INTO Student(Roll_No, Full_Name, Age, Batch_Year) VALUES ('$roll_number', '$name', '$age', '$batch_year')";
+	$sql = "INSERT INTO Student(Roll_No, Full_Name, Age, Batch_Year, password) VALUES ('$roll_number', '$name', '$age', '$batch_year', '$passwd')";
 	if (mysqli_query($conn, $sql)) {
 		echo 'Data inserted successfully';
 	} else {

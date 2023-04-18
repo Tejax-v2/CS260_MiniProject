@@ -80,7 +80,7 @@
 	$class12Cutoff = $_POST["class12Cutoff"];
 	$CPICutoff = $_POST["CPICutoff"];
 	
-	$sql = "INSERT INTO Company (Name, Salary_Package, Recruiting_Since, Interview_Mode, Interview_Type, min_Qualification, class10_cutoff, class12_cutoff, cpi_cutoff) VALUES ('$companyName', '$salaryPackage', '$recruitingSince', '$interviewMode', '$interviewType', '$minimumQualification', '$class10Cutoff', '$class12Cutoff', '$CPICutoff')";
+	$sql = "INSERT INTO Company (Name, Salary_Package, Recruiting_Since, Interview_Mode, Interview_Type, min_qualification, class10_cutoff, class12_cutoff, cpi_cutoff) VALUES ('$companyName', '$salaryPackage', '$recruitingSince', '$interviewMode', '$interviewType', '$minimumQualification', '$class10Cutoff', '$class12Cutoff', '$CPICutoff')";
 	
 	
 	if ($conn->query($sql) === TRUE) {
@@ -88,7 +88,6 @@
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-
 	$conn->close();
   ?>
   </body>
