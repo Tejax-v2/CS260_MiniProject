@@ -31,12 +31,17 @@
 						echo "<tr><th>Ongoing CPI</th>"."<td>". $row['cpi'] . "</td></tr>";
 					}
 
+
 					// Close database connection
 					mysqli_close($conn);
 				?>
 			</tbody>
 		</table>
 		<div class="row justify-content-center">
+
+		<div class="col-md-6 text-center">
+    <button class="btn btn-danger" onclick="location.href='studentlogin'">Give me JOB</button>
+				</div>
   <div class="col-md-6 text-center">
     <button class="btn btn-danger" onclick="location.href='studentlogin.php'">Logout</button>
   </div>
