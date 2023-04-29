@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </div>
                     <!-- Dropdown input field in HTML form -->
 					<div class="form-group">
-					<label for="Placed_In">Department:</label>
+					<label for="Placed_In">Working At:</label>
 						<select class="form-control" id="Placed_In" name="placed_in">
 							<?php echo $options; ?>
 						</select>
