@@ -33,10 +33,47 @@
 
 
 					// Close database connection
-					mysqli_close($conn);
+					
 				?>
 			</tbody>
 		</table>
+		
+		
+    <?php
+    // fetch the data from the database
+    $query = "SELECT * FROM Company"; // replace with your query
+    $result = mysqli_query($conn, $query); // replace $connection with your database connection variable
+
+    // check if the query returned any rows
+    if (mysqli_num_rows($result) > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<div class='card'>";
+  echo "<div class='card-body'>";
+		echo "<h5 class='card-title'>".$row['Name'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['Salary_Package'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['Recruiting_Since'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['Interview_Mode']."</h5>";
+		echo "<h5 class='card-title'>".$row['Interview_Type'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['min_qualification'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['class10_cutoff'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['class12_cutoff'] ."</h5>";
+		echo "<h5 class='card-title'>".$row['cpi_cutoff'] ."</h5>";
+      echo "<a href='#' class='btn btn-primary'>Apply Now</a>";
+      echo "</div></div>";
+	}	
+      ?>
+      
+    <?php
+    } else {
+      // handle no rows returned from the query
+      echo "No job found.";
+    }
+    mysqli_close($conn);
+    ?>
+  </div>
+</div>
+
+		
 		<div class="row justify-content-center">
 
 		<div class="col-md-6 text-center">
